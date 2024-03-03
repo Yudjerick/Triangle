@@ -29,18 +29,10 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(isLeader && other.CompareTag("Player")){
+        if(isLeader && other.CompareTag("Player") && _enemyState is NeutralState){
             _avaliablePoints = formation.points.Select(x => transform.position + x).ToList();
             _enemyState = new FormationBuildState(gameObject);
             Vector3 closest = _avaliablePoints[0];
-            foreach (var point in _avaliablePoints)
-            {
-                if((closest - transform.position).magnitude < (point - transform.position).magnitude){
-                    closest = point;
-                }
-            }
-            _enemyState.goal = closest;
-            _avaliablePoints.Remove(closest);
             foreach (var minion in minions)
             {
                 if(_avaliablePoints.Count <= 0){
@@ -50,7 +42,7 @@ public class EnemyAI : MonoBehaviour
                 closest = _avaliablePoints[0];
                 foreach (var point in _avaliablePoints)
                 {
-                    if((closest - minion.transform.position).magnitude < (point - minion.transform.position).magnitude){
+                    if((closest - minion.transform.position).magnitude > (point - minion.transform.position).magnitude){
                         closest = point;
                     }
                 }

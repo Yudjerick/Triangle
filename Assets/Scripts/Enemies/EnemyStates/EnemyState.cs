@@ -7,5 +7,9 @@ public abstract class EnemyState {
     public virtual EnemyState FrameUpdate(){return this;}
     public virtual EnemyState PhysicsUpdate(){return this;}
 
+    public virtual EnemyState OnTrigger(){
+        return this;
+    }
+
     public virtual void Exit(){}
 }

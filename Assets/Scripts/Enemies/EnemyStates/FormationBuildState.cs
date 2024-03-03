@@ -9,8 +9,8 @@ public class FormationBuildState : EnemyState
     }
     public override EnemyState PhysicsUpdate()
     {
-        rb.velocity = (goal - enemy.transform.position).normalized;
-        if((enemy.transform.position - goal).magnitude <= 0.01f){
+        rb.velocity = (goal - enemy.transform.position).normalized * 3f;
+        if((enemy.transform.position - goal).magnitude <= 0.03f){
             rb.velocity = Vector3.zero;
             return new NeutralState();
         }
