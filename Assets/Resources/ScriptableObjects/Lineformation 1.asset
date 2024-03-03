@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6227db36c0667e743bddbbbf9d90f6e4, type: 3}
   m_Name: Lineformation 1
   m_EditorClassIdentifier: 
-  setOriginToCenter: 0
+  setOriginToCenter: 1
   formations:
-  - {fileID: 11400000, guid: 9780bb4e9f9ec104392a64402b75a4c5, type: 2}
   - {fileID: 11400000, guid: c656da2f65a5e774dac16de358524a61, type: 2}
   - {fileID: 11400000, guid: c656da2f65a5e774dac16de358524a61, type: 2}
   - {fileID: 11400000, guid: c656da2f65a5e774dac16de358524a61, type: 2}
-  gap: 0.68
-  rotationOffset: 55
+  - {fileID: 11400000, guid: c656da2f65a5e774dac16de358524a61, type: 2}
+  - {fileID: 11400000, guid: c656da2f65a5e774dac16de358524a61, type: 2}
+  gap: 0.2
+  rotationOffset: 0

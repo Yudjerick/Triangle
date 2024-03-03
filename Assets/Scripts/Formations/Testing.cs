@@ -17,7 +17,8 @@ public class Testing : MonoBehaviour
     private void Update() {
         foreach (var pos in formation.points)
         {
-            DebugExtension.DebugCylinder(pos, pos + Vector3.down * 0.1f, 0.1f);
+            DebugExtension.DebugCircle(pos, 0.1f);
+            //DebugExtension.DebugCylinder(pos, pos + Vector3.down * 0.1f, 0.1f);
             //Debug.DrawLine(pos, pos + Vector3.down * 0.1f);
         }
     }
