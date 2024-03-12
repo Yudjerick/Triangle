@@ -1,15 +1,13 @@
 using UnityEngine;
+namespace Enemies{
+    public abstract class EnemyState: ScriptableObject {
+        public virtual void Enter(){}
+        public virtual void FrameUpdate(){}
+        public virtual void PhysicsUpdate(){}
 
-public abstract class EnemyState {
-    public GameObject enemy {get; set;}
-    public Vector3 goal {get;set;}
-    public virtual void Enter(){}
-    public virtual EnemyState FrameUpdate(){return this;}
-    public virtual EnemyState PhysicsUpdate(){return this;}
+        public virtual void OnTrigger(){
+        }
 
-    public virtual EnemyState OnTrigger(){
-        return this;
+        public virtual void Exit(){}
     }
-
-    public virtual void Exit(){}
 }

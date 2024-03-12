@@ -1,0 +1,7 @@
+using System;
+
+
+interface IFormationData
+{
+    
+}

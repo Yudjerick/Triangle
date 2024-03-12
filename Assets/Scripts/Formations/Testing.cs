@@ -1,11 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Leguar.TotalJSON;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
     public Formation formation;
     public GameObject testObj;
+
+    public String json;
+
+    [Button("Make json")]
+    void MakeJson(){
+        if(formation is not null){
+            IFormationData formationData = formation;
+            json = JsonUtility.ToJson(formation);
+        }
+    }
+
+    [Button("Parse json")]
+    void ParseJson(){
+        if(formation is not null){
+            JsonUtility.FromJsonOverwrite(json, formation);
+        }
+    }
+
     void Start()
     {
         print(formation.points);
@@ -18,8 +39,6 @@ public class Testing : MonoBehaviour
         foreach (var pos in formation.points)
         {
             DebugExtension.DebugCircle(pos, 0.1f);
-            //DebugExtension.DebugCylinder(pos, pos + Vector3.down * 0.1f, 0.1f);
-            //Debug.DrawLine(pos, pos + Vector3.down * 0.1f);
         }
     }
 }

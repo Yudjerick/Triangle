@@ -4,6 +4,6 @@ using UnityEngine;
 
 
 
-public abstract class Formation: ScriptableObject {
+public abstract class Formation: ScriptableObject, IFormationData{
     public abstract List<Vector3> points { get;}
 }

@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class Lineformation : Formation
 {
     [SerializeField] bool setOriginToCenter;
-    [SerializeField] private List<Formation> formations;
+    [SerializeReference, SerializeField] private List<Formation> formations;
+
     [SerializeField] private float gap = 0.2f;
 
     [SerializeField] private float rotationOffset = 0f;
