@@ -8,7 +8,9 @@ public class PlayerLook : MonoBehaviour
     private float xRotation = 0f;
     public float xSensitivity = 30f;
     public float ySensitivity = 30f;
+    public Vector2 inputView;
     public void ProcessLook(Vector2 input){
+        inputView = input;
         float mouseX = input.x;
         float mouseY = input.y;
         //calculate camera rotation for looking up adn down
