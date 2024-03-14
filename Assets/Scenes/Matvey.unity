@@ -1881,8 +1881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1564634802}
-  xSensitivity: 30
-  ySensitivity: 30
+  xSensitivity: 10
+  ySensitivity: 10
 --- !u!114 &780518773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,12 +1934,19 @@ MonoBehaviour:
   overlay: {fileID: 2047725285}
   duration: 2
   fadeSpeed: 1.5
---- !u!4 &780518787 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5457162103274985671, guid: fe63f107e4ec4d647a199ecbea1abc5a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6922460409964591058}
+--- !u!114 &780518791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780518765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c93c8e836bba0408996bee9465a125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1651679138}
 --- !u!1 &790403720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,7 +2998,7 @@ Transform:
   m_GameObject: {fileID: 1361281823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.74609166, z: 0.31499997}
+  m_LocalPosition: {x: 0, y: 0.74609166, z: 0.446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3527,6 +3534,12 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!4 &1564634805 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2452296327037065743, guid: fe63f107e4ec4d647a199ecbea1abc5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6922460409964591058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1602717895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,12 +3746,12 @@ Transform:
   m_GameObject: {fileID: 1651679136}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.278, y: 0.282, z: 0.326}
+  m_LocalPosition: {x: 0.278, y: -0.31799996, z: 0.32599998}
   m_LocalScale: {x: -0.04611054, y: 0.046911, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1361281824}
-  m_Father: {fileID: 780518787}
+  m_Father: {fileID: 1564634805}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1651679138
 MonoBehaviour:
@@ -3753,8 +3766,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    SwayAmount: 1
-    SwaySmoothing: 0
+    SwayAmount: 10
+    SwaySmoothing: 0.1
+    SwayResetSmoothing: 0.1
+    SwayClampX: 4
+    SwayClampY: 4
 --- !u!1 &1705340772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,7 +4617,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5457162103274985671, guid: fe63f107e4ec4d647a199ecbea1abc5a,
+    - targetCorrespondingSourceObject: {fileID: 2452296327037065743, guid: fe63f107e4ec4d647a199ecbea1abc5a,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1651679137}
@@ -4630,6 +4646,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 780518783}
+    - targetCorrespondingSourceObject: {fileID: 299393003266413805, guid: fe63f107e4ec4d647a199ecbea1abc5a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 780518791}
     - targetCorrespondingSourceObject: {fileID: 6551012476278086772, guid: fe63f107e4ec4d647a199ecbea1abc5a,
         type: 3}
       insertIndex: -1

@@ -13,6 +13,10 @@ public static class Models
         [Header("Sway")]
         public float SwayAmount;
         public float SwaySmoothing;
+        public float SwayResetSmoothing;
+        public float SwayClampX;
+        public float SwayClampY;
+
     }
     #endregion
 }
