@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
     private CharacterController controller;
-    
+    private float currSpeed;
     private Vector3 playerVelocity;
     private bool isGrounded;
     private bool crouching = false;
@@ -16,16 +16,19 @@ public class PlayerMotor : MonoBehaviour
     public float gravity = -9.8f;
 
     public float jumpHeight = 3f;
+
+    public float weaponAnimationSpeed;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        currSpeed = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         isGrounded = controller.isGrounded;
         if (lerpCrouch){
             crouchTimer += Time.deltaTime;
@@ -40,18 +43,35 @@ public class PlayerMotor : MonoBehaviour
                 crouchTimer = 0f;
             }
         }
+        weaponAnimationSpeed = currSpeed * speed;
+        Debug.Log(controller.velocity.magnitude / (currSpeed));
+        Debug.Log("Curr speed: " + currSpeed);
+
+
+
+        if (weaponAnimationSpeed > 1)
+        {
+            weaponAnimationSpeed = 1;
+        }
+        if (!isGrounded)
+        {
+            weaponAnimationSpeed = 0;
+        }
     }
     //recieve the inputs for our InputManager.cs and apply them to our character controller
     public void ProcessMove(Vector2 input){
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
-        controller.Move(transform.TransformDirection(moveDirection)* speed * Time.deltaTime);
+        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+
         playerVelocity.y += gravity * Time.deltaTime;
+
+
         if (isGrounded && playerVelocity.y<0)
             playerVelocity.y= -2f;
         controller.Move(playerVelocity*Time.deltaTime);
-        Debug.Log(playerVelocity.y);
+        currSpeed = transform.TransformDirection(moveDirection).magnitude * speed * Time.deltaTime;
     }
     public void Jump(){
         if (isGrounded){
@@ -61,6 +81,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void Crouch(){
         crouching = !crouching;
+        speed = 3f;
         crouchTimer = 0;
         lerpCrouch = true;
     }

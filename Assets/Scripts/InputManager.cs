@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
         motor = GetComponent<PlayerMotor>();
         look = GetComponent<PlayerLook>();
         weapon = GetComponent<PlayerWeapon>();
-
+        weapon.controller.Initialise(motor);
         OnFoot.Jump.performed += ctx => motor.Jump();
 
         OnFoot.Crouch.performed += ctx => motor.Crouch();
@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
         motor.ProcessMove(OnFoot.Movement.ReadValue<Vector2>());
     }
     private void LateUpdate() {
-        weapon.controller.ProcessWeaponMoveWithCamera(OnFoot.Look.ReadValue<Vector2>());
+        weapon.controller.ProcessWeaponMoveWithCamera(OnFoot.Look.ReadValue<Vector2>(), OnFoot.Movement.ReadValue<Vector2>());
 
         look.ProcessLook(OnFoot.Look.ReadValue<Vector2>());
     }
