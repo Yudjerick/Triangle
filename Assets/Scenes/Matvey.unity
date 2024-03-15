@@ -1927,6 +1927,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.8
   jumpHeight: 1.5
+  weaponAnimationSpeed: 0
 --- !u!114 &780518767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3785,6 +3786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be1c020a44e93843a06be91ba24f2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponAnimator: {fileID: 1602983534}
   settings:
     SwayAmount: 10
     SwaySmoothing: 0.1
