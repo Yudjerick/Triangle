@@ -44,9 +44,6 @@ public class PlayerMotor : MonoBehaviour
             }
         }
         weaponAnimationSpeed = currSpeed * speed;
-        Debug.Log(controller.velocity.magnitude / (currSpeed));
-        Debug.Log("Curr speed: " + currSpeed);
-
 
 
         if (weaponAnimationSpeed > 1)

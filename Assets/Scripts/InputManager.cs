@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
     public PlayerInput.OnFootActions OnFoot;
+    public PlayerInput.WeaponActions Weapon;
 
     private PlayerMotor motor;
     private PlayerLook look;
@@ -16,11 +17,16 @@ public class InputManager : MonoBehaviour
     {
         playerInput = new PlayerInput();
         OnFoot = playerInput.OnFoot;
+        Weapon = playerInput.Weapon;
         
         motor = GetComponent<PlayerMotor>();
         look = GetComponent<PlayerLook>();
         weapon = GetComponent<PlayerWeapon>();
         weapon.controller.Initialise(motor);
+
+        Weapon.Shoot.performed += ctx => weapon.controller.StartShoot();
+        Weapon.Shoot.canceled += ctx => weapon.controller.CancelShoot();
+
         OnFoot.Jump.performed += ctx => motor.Jump();
 
         OnFoot.Crouch.performed += ctx => motor.Crouch();
@@ -42,8 +48,10 @@ public class InputManager : MonoBehaviour
     }
     private void OnEnable() {
         OnFoot.Enable();
+        Weapon.Enable();
     }
     private void OnDisable() {
         OnFoot.Disable();
+        Weapon.Disable();
     }
 }
