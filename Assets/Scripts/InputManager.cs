@@ -33,6 +33,8 @@ public class InputManager : MonoBehaviour
 
         OnFoot.Sprint.performed += ctx => motor.Sprint();
 
+        Cursor.visible = false;
+
     }
 
     // Update is called once per frame
