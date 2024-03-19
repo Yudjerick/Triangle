@@ -210,6 +210,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &104708599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -383,6 +384,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &125003220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -556,6 +558,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &143542730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -729,6 +732,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &163519190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -902,6 +906,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &242239171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1131,6 +1136,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &382735074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1304,6 +1310,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &436414981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1390,6 +1397,128 @@ Transform:
   m_Children: []
   m_Father: {fileID: 272291242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &483890285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483890289}
+  - component: {fileID: 483890288}
+  - component: {fileID: 483890287}
+  - component: {fileID: 483890286}
+  - component: {fileID: 483890290}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &483890286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483890285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &483890287
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483890285}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &483890288
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483890285}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &483890289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483890285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.75, y: 0.22295284, z: 4.181105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &483890290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483890285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4b9e3f70fe1534698de500cfefa3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeader: 0
+  minions: []
+  formation: {fileID: 0}
+  stateMachine: {fileID: 11400000, guid: f59dea46e90baf846bc142ad424b4c23, type: 2}
 --- !u!1 &529121057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1606,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &529121061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1650,6 +1780,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &622577722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1823,6 +1954,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &663457661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1996,6 +2128,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &734158989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2098,7 +2231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &884569935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,7 +2290,7 @@ Transform:
   m_GameObject: {fileID: 898838500}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 5.61}
+  m_LocalPosition: {x: -3.28, y: 0.7, z: 5.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2323,6 +2456,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &946029959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2496,6 +2630,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1132163887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2669,6 +2804,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1148376982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3046,6 +3182,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 63c972ee674b44a4ab20036d0fa0647c, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!1 &1479767849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3270,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1479767853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3306,6 +3444,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1509307714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3479,6 +3618,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1627947298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3652,6 +3792,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1633154825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3930,6 +4071,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1725069703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4195,6 +4337,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1818928880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4368,6 +4511,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1894576021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4541,6 +4685,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &1976658511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4714,6 +4859,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &2005356311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4887,6 +5033,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   formation: {fileID: 11400000, guid: 5cd81992e18e946439999a6a6dd3b6da, type: 2}
+  stateMachine: {fileID: 0}
 --- !u!65 &2073766039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4983,3 +5130,4 @@ SceneRoots:
   - {fileID: 898838501}
   - {fileID: 884569936}
   - {fileID: 272291242}
+  - {fileID: 483890289}

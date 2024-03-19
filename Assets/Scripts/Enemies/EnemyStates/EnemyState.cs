@@ -1,6 +1,7 @@
 using UnityEngine;
 namespace Enemies{
     public abstract class EnemyState: ScriptableObject {
+        public EnemyAI enemy;
         public virtual void Enter(){}
         public virtual void FrameUpdate(){}
         public virtual void PhysicsUpdate(){}

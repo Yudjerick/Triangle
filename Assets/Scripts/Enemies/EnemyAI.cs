@@ -5,12 +5,17 @@ using UnityEngine;
 namespace Enemies {
     public class EnemyAI : MonoBehaviour
     {
-        [SerializeField] private bool isLeader;
 
-        [SerializeField] private List<EnemyAI> minions;
-        [SerializeField] private Formation formation;
+        [SerializeField] private EnemyStateMachine stateMachine;
 
-        private List<Vector3> _avaliablePoints;
+        private void Start() {
+            stateMachine = Instantiate(stateMachine);
+            stateMachine.Init(this);
+        }
+
+        private void Update() {
+            stateMachine.Update();
+        }
     }
 
 }
