@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Windows;
@@ -7,7 +8,6 @@ using static Models;
 
 public class WeaponController : MonoBehaviour
 {
-    public Camera playerCamera;
 
     //Shooting
     public bool isShooting, readyToShoot;
@@ -37,8 +37,10 @@ public class WeaponController : MonoBehaviour
     public ShootingMode currentShootingMode;
 
     [Header("References")]
-    public Animator weaponAnimator;
-
+    [AllowsNull]
+#nullable enable
+    public Animator? weaponAnimator;
+#nullable disable
     [Header("Settings")]
     public WeaponSettingsModel settings;
     
@@ -82,8 +84,10 @@ public class WeaponController : MonoBehaviour
         {
             return;
         }
-
-        weaponAnimator.speed = motor.weaponAnimationSpeed;
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.speed = motor.weaponAnimationSpeed;
+        }
 
         float mouseX = input_view.x;
         float mouseY = input_view.y;
@@ -110,7 +114,6 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isShooting);
         if (readyToShoot && isShooting)
         {
             burstBulletsLeft = bulletsPerBurst;
@@ -131,7 +134,7 @@ public class WeaponController : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
         bullet.transform.forward = shootingDirection;
-
+        Debug.Log(bullet.transform.forward);
         bullet.GetComponent<Rigidbody>().AddForce(shootingDirection * bulletVelocity, ForceMode.Impulse);
 
         StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
@@ -158,7 +161,7 @@ public class WeaponController : MonoBehaviour
 
     private Vector3 CalculateDirectionAndSpread()
     {
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
         Vector3 targetPoint;
@@ -172,9 +175,9 @@ public class WeaponController : MonoBehaviour
         }
 
         Vector3 direction = targetPoint - bulletSpawn.position;
-
         float x = UnityEngine.Random.Range(-spreadIntesity, spreadIntesity);
         float y = UnityEngine.Random.Range(-spreadIntesity, spreadIntesity);
+        Debug.Log("bullet Dir: " + (direction + new Vector3(x, y, 0)));
 
         return direction + new Vector3(x, y, 0);
     }
@@ -188,7 +191,6 @@ public class WeaponController : MonoBehaviour
     {
         if (currentShootingMode == ShootingMode.Auto)
         {
-            Debug.Log("Cancel");
 
             isShooting = false;
         }
